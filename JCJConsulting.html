@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jenicerri Accounting Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fractional controllership, bookkeeping, and financial operations for owners who demand audit-ready data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #040b1f;
+      --slate: #0d1b3f;
+      --stone: #4c587a;
+      --cloud: #eef0f6;
+      --card: rgba(255, 255, 255, 0.06);
+      --accent: #6a8bff;
+      --accent-strong: #274ef8;
+      --accent-soft: rgba(111, 132, 255, 0.15);
+      --surface: #f7f9ff;
+      --success: #19c39c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f1f46 0%, #020611 60%);
+      color: var(--cloud);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='rgba(255,255,255,0.02)'/%3E%3C/svg%3E");
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    header.hero {
+      padding: 32px clamp(20px, 4vw, 70px) 90px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 32px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 11, 31, 0.65);
+      z-index: 5;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 24px;
+      padding: 18px clamp(18px, 4vw, 42px);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav-scrolled {
+      box-shadow: 0 20px 40px rgba(2, 6, 17, 0.6);
+    }
+
+    .logo {
+      font-family: "Space Grotesk", "Inter", sans-serif;
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 46px);
+      font-size: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--cloud);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-btn {
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(106, 139, 255, 0.4);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(28px, 4vw, 60px);
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.7rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .primary-cta,
+    .ghost-cta {
+      border-radius: 999px;
+      padding: 13px 30px;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .primary-cta {
+      background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 20px 50px rgba(39, 78, 248, 0.35);
+    }
+
+    .primary-cta:hover {
+      transform: translateY(-3px);
+    }
+
+    .ghost-cta {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .ghost-cta:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list li {
+      padding-left: 28px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .hero-list li::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 0;
+      top: 5px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px rgba(25, 195, 156, 0.7);
+    }
+
+    .hero-panel {
+      position: relative;
+    }
+
+    .panel-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 26px;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 10%, rgba(106, 139, 255, 0.3), transparent 50%);
+      pointer-events: none;
+    }
+
+    .panel-title {
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
+    }
+
+    .panel-text {
+      font-size: 20px;
+      margin-bottom: 22px;
+    }
+
+    .panel-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .panel-metrics span.metric {
+      font-size: 32px;
+      font-weight: 700;
+      display: block;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .panel-highlight {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .panel-highlight strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: clamp(60px, 12vw, 120px) clamp(20px, 5vw, 90px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    section:nth-of-type(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .stat-card {
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 26px;
+      background: rgba(6, 12, 32, 0.6);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 12px;
+    }
+
+    .stat-value {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .stat-note {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .services {
+      background: #050b1f;
+      color: #fff;
+    }
+
+    .services .section-heading p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 26px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #fff;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .service-card li {
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .service-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-strong);
+    }
+
+    .approach .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 26px;
+      background: rgba(3, 7, 18, 0.5);
+      position: relative;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .testimonial cite {
+      display: block;
+      margin-top: 16px;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+    }
+
+    .cta {
+      background: linear-gradient(120deg, #09112c, #172a63);
+      padding: clamp(70px, 10vw, 120px);
+      text-align: center;
+    }
+
+    .cta-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 30px;
+      padding: clamp(40px, 6vw, 70px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    .cta-card h2 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin: 28px 0;
+      text-align: left;
+    }
+
+    .contact-grid span {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-grid a {
+      display: inline-block;
+      color: #fff;
+      margin-top: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .footer {
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        position: relative;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 16px;
+      }
+
+      .hero-list li::before {
+        top: 8px;
+      }
+
+      .panel-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <nav class="nav">
+      <div class="logo">Jenicerri</div>
+      <div class="nav-links">
+        <a href="#services" data-scroll>Capabilities</a>
+        <a href="#approach" data-scroll>Method</a>
+        <a href="#contact" data-scroll>Contact</a>
+        <button class="nav-btn" data-scroll="#contact">Schedule a Call</button>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy reveal" data-reveal>
+        <p class="eyebrow">Fractional finance partner</p>
+        <h1>Clean data, proactive insight, confident growth.</h1>
+        <p class="lead">We deliver controller-level oversight, bulletproof bookkeeping, and systems that scale with every transaction.</p>
+        <div class="cta-group">
+          <a class="primary-cta" href="mailto:kledi.jenicerri@hotmail.com">Book a consultation</a>
+          <button class="ghost-cta" data-scroll="#services">Review capabilities</button>
+        </div>
+        <ul class="hero-list">
+          <li>Full-stack bookkeeping, AP/AR, and payroll orchestration</li>
+          <li>Realtime dashboards and KPIs for decisive leadership</li>
+          <li>Catch-up and cleanup projects in record time</li>
+          <li>Systems expertise across QuickBooks, Excel, and cloud tools</li>
+        </ul>
+      </div>
+
+      <div class="hero-panel reveal" data-reveal>
+        <div class="panel-card">
+          <p class="panel-title">Executive scorecard</p>
+          <p class="panel-text">Custom dashboards tuned to the KPIs owners watch before every decision.</p>
+          <div class="panel-metrics">
+            <div>
+              <span class="metric" data-count="24">0</span>
+              <span class="metric-label">Industries served</span>
+            </div>
+            <div>
+              <span class="metric" data-count="12">0</span>
+              <span class="metric-label">Years in operations</span>
+            </div>
+            <div>
+              <span class="metric" data-count="98">0</span>
+              <span class="metric-label">Client retention %</span>
+            </div>
+            <div>
+              <span class="metric" data-count="5">0</span>
+              <span class="metric-label">Days monthly close</span>
+            </div>
+          </div>
+          <div class="panel-highlight">
+            <strong>Focus</strong>
+            <div data-highlight>Audit-ready financials</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="metrics">
+      <div class="section-heading reveal" data-reveal>
+        <p class="eyebrow">Proof</p>
+        <h2>Quiet confidence backed by disciplined execution.</h2>
+        <p>Owners rely on us when cash clarity and lender-ready books are not optional.</p>
+      </div>
+      <div class="stats">
+        <article class="stat-card reveal" data-reveal>
+          <p class="stat-label">Average cleanup</p>
+          <div class="stat-value"><span data-count="30">0</span> days</div>
+          <p class="stat-note">From box of receipts to reconciled books, faster than internal teams.</p>
+        </article>
+        <article class="stat-card reveal" data-reveal>
+          <p class="stat-label">Workflow automation</p>
+          <div class="stat-value"><span data-count="120">0</span> hrs</div>
+          <p class="stat-note">Annual hours returned to founders via improved AP/AR cycles.</p>
+        </article>
+        <article class="stat-card reveal" data-reveal>
+          <p class="stat-label">Cash visibility</p>
+          <div class="stat-value"><span data-count="13">0</span> wks</div>
+          <p class="stat-note">Rolling cash forecast delivered with every monthly close.</p>
+        </article>
+        <article class="stat-card reveal" data-reveal>
+          <p class="stat-label">Audit preparation</p>
+          <div class="stat-value"><span data-count="100">0</span>%</div>
+          <p class="stat-note">All statements reconciled, documented, and audit-ready.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-heading reveal" data-reveal>
+        <p class="eyebrow">Capabilities</p>
+        <h2>Back-office architecture designed for confident scaling.</h2>
+        <p>Fractional controllership, bookkeeping, and operational process design layered into one accountable partner.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal" data-reveal>
+          <h3>Controller Services</h3>
+          <ul>
+            <li>Monthly close within five business days</li>
+            <li>Budget vs. actual, KPI, and unit economics dashboards</li>
+            <li>Cash flow planning and scenario analysis</li>
+            <li>Board and banking package preparation</li>
+          </ul>
+        </article>
+        <article class="service-card reveal" data-reveal>
+          <h3>Bookkeeping & Compliance</h3>
+          <ul>
+            <li>Daily transaction coding and reconciliations</li>
+            <li>Payroll, 1099, and sales tax coordination</li>
+            <li>AP/AR monitoring with vendor and client portals</li>
+            <li>Cleanup and catch-up projects across years</li>
+          </ul>
+        </article>
+        <article class="service-card reveal" data-reveal>
+          <h3>Systems & Intelligence</h3>
+          <ul>
+            <li>QuickBooks Online, Desktop, Excel, and NetSuite expertise</li>
+            <li>Process automation and secure document workflows</li>
+            <li>Data room organization for transactions or audits</li>
+            <li>Integrations with POS, payroll, and CRM tools</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="section-heading reveal" data-reveal>
+        <p class="eyebrow">Method</p>
+        <h2>A disciplined, four-step engagement that keeps momentum.</h2>
+      </div>
+      <div class="timeline">
+        <article class="step reveal" data-reveal>
+          <div class="step-number">01</div>
+          <h3>Diagnostic</h3>
+          <p>Systems review, prior-year walkthrough, and KPI mapping to understand the state of your books and goals.</p>
+        </article>
+        <article class="step reveal" data-reveal>
+          <div class="step-number">02</div>
+          <h3>Stabilize</h3>
+          <p>Cleanup, reconciliations, and control rebuilds to deliver a clean month zero everyone can trust.</p>
+        </article>
+        <article class="step reveal" data-reveal>
+          <div class="step-number">03</div>
+          <h3>Operationalize</h3>
+          <p>Automated workflows, reporting cadence, and dashboards integrated with your leadership rhythm.</p>
+        </article>
+        <article class="step reveal" data-reveal>
+          <div class="step-number">04</div>
+          <h3>Advise</h3>
+          <p>Quarterly reviews and on-call insights that help owners make confident moves with live data.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-heading reveal" data-reveal>
+        <p class="eyebrow">Testimonials</p>
+        <h2>Owners trust us when the numbers have to be right the first time.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial reveal" data-reveal>
+          "Jenicerri replaced a patchwork of freelancers with one accountable partner. Our lenders now comment on how buttoned-up our reporting is."
+          <cite>COO, Northeast construction firm</cite>
+        </article>
+        <article class="testimonial reveal" data-reveal>
+          "They cleaned 18 months of books in weeks, built a cash model, and now join our leadership meetings to guide decisions."
+          <cite>Founder, eCommerce brand</cite>
+        </article>
+        <article class="testimonial reveal" data-reveal>
+          "The team translated messy field data into dashboards that our board loves. We finally know our margins in real time."
+          <cite>President, multi-location services company</cite>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-card reveal" data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2>Let's build a finance engine that scales as fast as your business.</h2>
+        <p>Schedule a discovery call to review your current books, goals, and timeline.</p>
+        <div class="contact-grid">
+          <div>
+            <span>Email</span>
+            <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a>
+          </div>
+          <div>
+            <span>Phone</span>
+            <a href="tel:+12035609114">+1 (203) 560-9114</a>
+          </div>
+          <div>
+            <span>Location</span>
+            <p>Remote + on-site support in CT & tri-state</p>
+          </div>
+        </div>
+        <div class="cta-actions">
+          <a class="primary-cta" href="mailto:kledi.jenicerri@hotmail.com">Book a consultation</a>
+          <a class="ghost-cta" href="tel:+12035609114">Call now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; <span data-year></span> Jenicerri Accounting Services. Clean books. Clear decisions.
+  </footer>
+
+  <script>
+    (function () {
+      const nav = document.querySelector(".nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          nav.classList.add("nav-scrolled");
+        } else {
+          nav.classList.remove("nav-scrolled");
+        }
+      });
+
+      document.querySelectorAll("[data-scroll]").forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          const selector = trigger.dataset.scroll || trigger.getAttribute("href");
+          const target = document.querySelector(selector);
+          if (!target) return;
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      document.querySelectorAll("[data-reveal]").forEach((element) => {
+        element.classList.add("reveal");
+        revealObserver.observe(element);
+      });
+
+      function animateCount(element) {
+        const target = Number(element.dataset.count) || 0;
+        const duration = 1600;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+          element.textContent = value.toLocaleString();
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            element.textContent = target.toLocaleString();
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll("[data-count]").forEach((element) => {
+        counterObserver.observe(element);
+      });
+
+      document.querySelectorAll("[data-year]").forEach((node) => {
+        node.textContent = new Date().getFullYear();
+      });
+
+      const highlights = [
+        "Audit-ready financials",
+        "Proactive cash insight",
+        "Workflow automation",
+        "Executive dashboarding"
+      ];
+      const highlightTarget = document.querySelector("[data-highlight]");
+      if (highlightTarget) {
+        let index = 0;
+        setInterval(() => {
+          index = (index + 1) % highlights.length;
+          highlightTarget.textContent = highlights[index];
+        }, 2600);
+      }
+    })();
+  </script>
+</body>
+</html>
