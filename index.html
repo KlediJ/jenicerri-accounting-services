@@ -1,126 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Kledi Jenicerri | Cleanup Bookkeeping</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-:root {
---ink: #1a1a1a;
---stone: #f4f4f4;
---accent: #2563eb;
---border: #ddd;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-line-height: 1.5;
-color: var(--ink);
-background-color: #fff;
-padding: 0;
-}
-header, section, footer {
-max-width: 650px;
-margin: 0 auto;
-padding: 40px 20px;
-}
-.eyebrow {
-text-transform: uppercase;
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 0.05em;
-color: #666;
-display: block;
-margin-bottom: 8px;
-}
-h1 { font-size: 32px; line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.02em; }
-h2 { font-size: 24px; margin-bottom: 16px; border-bottom: 2px solid var(--ink); display: inline-block; }
-p { margin-bottom: 20px; font-size: 17px; }
-ul { list-style: none; margin-bottom: 30px; }
-li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-.cta-btn {
-display: inline-block;
-background: var(--ink);
-color: #fff;
-padding: 14px 24px;
-text-decoration: none;
-font-weight: 600;
-border-radius: 4px;
-}
-.offer-grid { display: grid; gap: 40px; margin-top: 20px; }
-.offer-card { border: 1px solid var(--border); padding: 25px; border-radius: 4px; }
-.offer-card h3 { margin-bottom: 12px; font-size: 19px; }
-.process-step { margin-bottom: 30px; }
-.step-num { font-weight: 800; color: var(--accent); margin-right: 5px; }
-.contact-box { background: var(--stone); padding: 30px; border-radius: 4px; }
-hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kledi Jenicerri | Bookkeeping Cleanup</title>
+    <meta name="description" content="Bookkeeping cleanup for small service businesses and contractors.">
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --accent: #0f172a;
+            --accent-hover: #334155;
+        }
+
+        /* Reset & Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 5vh 5vw;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        section { margin-bottom: 4rem; }
+
+        /* Typography */
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        /* Buttons & Links */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover { background-color: var(--accent-hover); }
+
+        a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+        a:hover { color: var(--text-muted); }
+
+        /* Components */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .step { margin-bottom: 1.5rem; }
+        .step p { margin-bottom: 0; }
+
+        .contact-box {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
-<header>
-<span class="eyebrow">For small contractors behind on bookkeeping</span>
-<h1>I fix messy QuickBooks so you know your actual cash position.</h1>
-<p>If you’re months behind on reconciliations, commingling personal and business accounts, or can't produce a clean P&L for a loan, I can help. I’m a solo operator—not a firm—focused on digging through the transactions to get your data straight.</p>
-<ul>
-<li>Catch up on months or years of unreconciled bank and credit accounts.</li>
-<li>Clean up the chart of accounts so you see where you're actually losing money.</li>
-<li>One-on-one help to get things stable so you stop guessing at your balance.</li>
-</ul>
-<a href="mailto:kledi.jenicerri@hotmail.com?subject=Diagnostic%20Request" class="cta-btn">Request a diagnostic</a>
-</header>
-<section id="offers">
-<h2>The Work</h2>
-<div class="offer-grid">
-<div class="offer-card">
-<h3>1. Paid Diagnostic (Required)</h3>
-<p>I don't guess at pricing. I spend a few hours in your file to see where it's broken.</p>
-<ul>
-<li>Review of your QBO/QBD and bank statements.</li>
-<li>Detailed list of every account that doesn't tie out.</li>
-<li>A fixed-price quote to clean up the entire history.</li>
-</ul>
-</div>
-<div class="offer-card">
-<h3>2. Cleanup + Optional Monthly Close</h3>
-<p>Once we know the scope, I fix the history so your books are current.</p>
-<ul>
-<li>Categorizing every transaction correctly for your specific trade.</li>
-<li>Full reconciliation of all accounts to the penny.</li>
-<li>Option to have me handle the monthly closing moving forward.</li>
-</ul>
-</div>
-</div>
-</section>
-<hr>
-<section id="process">
-<h2>How it works</h2>
-<div class="process-step">
-<p><span class="step-num">01.</span> I run the diagnostic to find the holes in your current bookkeeping and give you a real price for the fix.</p>
-</div>
-<div class="process-step">
-<p><span class="step-num">02.</span> I roll up my sleeves and do the cleanup—reconciling accounts and fixing the mess until the P&L makes sense.</p>
-</div>
-<div class="process-step">
-<p><span class="step-num">03.</span> You get clean books back. We can either part ways there or I can keep things clean every month.</p>
-</div>
-</section>
-<section id="contact">
-<div class="contact-box">
-<h2>Request a diagnostic</h2>
-<p>Email me to get started. Don't worry about how messy it is; I've seen worse. To give you a diagnostic price, I need to know:</p>
-<ul>
-<li>If you use QuickBooks Online or Desktop.</li>
-<li>How many months (or years) you are behind.</li>
-<li>How many bank and credit card accounts you use.</li>
-<li>Roughly what your annual revenue looks like.</li>
-</ul>
-<p><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
-<p><strong>Phone:</strong> +1 (203) 560-9114</p>
-</div>
-</section>
-<footer>
-<p style="font-size: 14px; color: #888;">&copy; 2026 Kledi Jenicerri. No corporate fluff, just clean books.</p>
-</footer>
+
+    <div class="container">
+        <header>
+            <section>
+                <span class="eyebrow">For service businesses & contractors</span>
+                <h1>I fix messy books so you know your actual cash position.</h1>
+                <p>If you are behind on reconciliations, mixing personal and business expenses, or have no reliable P&L, I can help. I am a solo operator. I untangle the mess.</p>
+                <a href="#contact" class="btn">Request a diagnostic</a>
+            </section>
+        </header>
+
+        <main>
+            <section id="offer">
+                <h2>The Offer</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>1. Paid Diagnostic (Required)</h3>
+                        <p>I review your file to see exactly what is broken.</p>
+                        <ul>
+                            <li>Review of your QBO/QBD and bank statements.</li>
+                            <li>List of broken reconciliations and coding errors.</li>
+                            <li>A fixed-price quote to clean it all up.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>2. Cleanup + Monthly Close</h3>
+                        <p>I fix the historical data so your numbers are usable.</p>
+                        <ul>
+                            <li>Reconcile all accounts for the catch-up period.</li>
+                            <li>Correct the chart of accounts.</li>
+                            <li>Optional: Ongoing monthly close.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="process">
+                <h2>The Process</h2>
+                <div class="step">
+                    <h3>Step 1: Diagnostic</h3>
+                    <p>I review your file and provide a findings memo with a flat-rate cleanup quote.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2: Cleanup</h3>
+                    <p>I reconcile accounts, fix the coding, and rebuild the basics.</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3: Handover</h3>
+                    <p>You get a clean P&L. Manage it yourself, or hire me to close the books monthly.</p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="contact-box">
+                    <h2>Request a diagnostic</h2>
+                    <p>Send an email to get started. I need four details to price your diagnostic:</p>
+                    <ul>
+                        <li>QBO or Desktop?</li>
+                        <li>How many months behind?</li>
+                        <li>Number of bank and credit card accounts?</li>
+                        <li>Rough annual revenue?</li>
+                    </ul>
+                    <p style="margin-top: 2rem; margin-bottom: 0.5rem;"><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
+                    <p style="margin-bottom: 0;"><strong>Phone:</strong> +1 (203) 560-9114</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kledi Jenicerri. Based in CT.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
