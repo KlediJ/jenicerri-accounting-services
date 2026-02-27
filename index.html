@@ -4,157 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kledi Jenicerri | QuickBooks Cleanup for Contractors</title>
-  <meta name="description" content="QuickBooks cleanup and catch-up for contractors and service businesses. Bank to books, accurate P&L, clean close." />
+  <meta name="description" content="QuickBooks cleanup and catch-up for contractors and service businesses. Reconciliations, categorization cleanup, and clean reports." />
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text-main:#000000;
-      --text-muted:#555555;
-      --border:#dddddd;
-      --button:#111111;
-      --button-hover:#333333;
-      --card:#fafafa;
-      --pill:#f4f4f5;
+    :root {
+      --bg: #ffffff;
+      --text-main: #000000;
+      --text-muted: #555555;
+      --border: #dddddd;
+      --button: #111111;
+      --button-hover: #333333;
+      --card: #fafafa;
+      --contact: #f4f4f5;
     }
 
-    *{ box-sizing:border-box; margin:0; padding:0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text-main);
-      line-height:1.5;
-      -webkit-font-smoothing:antialiased;
-      padding:40px 20px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
     }
 
-    .container{ max-width:650px; margin:0 auto; }
-    section{ margin-bottom:56px; }
+    .container { max-width: 650px; margin: 0 auto; }
 
-    .profile-pic{
-      width:88px; height:88px; border-radius:50%;
-      object-fit:cover; margin-bottom:18px;
-      border:1px solid var(--border); display:block;
+    section { margin-bottom: 56px; }
+
+    .profile-pic {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      display: block;
     }
 
-    .eyebrow{
-      display:inline-block;
-      font-size:13px; font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      color:var(--text-muted);
-      margin-bottom:12px;
+    .eyebrow {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
     }
 
-    h1{
-      font-size:30px; font-weight:800;
-      letter-spacing:-0.02em;
-      margin-bottom:14px;
-      line-height:1.15;
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.15;
     }
 
-    .subhead{
-      font-size:16px;
-      color:var(--text-muted);
-      margin-bottom:18px;
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--text-main);
     }
 
-    .pills{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 18px; }
-    .pill{
-      font-size:13px; font-weight:600;
-      padding:6px 10px;
-      border:1px solid var(--border);
-      background:var(--pill);
-      border-radius:999px;
-      color:var(--text-main);
+    h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
 
-    h2{
-      font-size:18px; font-weight:800;
-      margin-bottom:18px;
-      padding-bottom:10px;
-      border-bottom:2px solid var(--text-main);
+    p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
     }
 
-    h3{ font-size:16px; font-weight:800; margin-bottom:8px; }
+    ul { list-style: none; margin-bottom: 18px; }
 
-    p{
-      font-size:16px;
-      color:var(--text-muted);
-      margin-bottom:18px;
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 15px;
     }
 
-    ul{ list-style:none; margin-bottom:18px; }
-    li{
-      position:relative;
-      padding-left:20px;
-      margin-bottom:10px;
-      color:var(--text-muted);
-      font-size:15px;
-    }
-    li::before{
-      content:"—";
-      position:absolute; left:0;
-      color:var(--text-main);
-      font-weight:800;
+    li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--text-main);
+      font-weight: 800;
     }
 
-    .btn{
-      display:inline-block;
-      background:var(--button);
-      color:#fff;
-      font-weight:700;
-      font-size:15px;
-      padding:12px 18px;
-      border-radius:4px;
-      text-decoration:none;
-      margin-top:8px;
-    }
-    .btn:hover{ background:var(--button-hover); }
-
-    a{
-      color:var(--text-main);
-      text-decoration:underline;
-      text-underline-offset:3px;
-    }
-    a:hover{ color:var(--text-muted); }
-
-    .card{
-      border:1px solid var(--border);
-      padding:22px;
-      border-radius:6px;
-      margin-bottom:18px;
-      background:var(--card);
+    .btn {
+      display: inline-block;
+      background-color: var(--button);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 10px;
     }
 
-    .contact-box{
-      background:var(--pill);
-      padding:26px;
-      border-radius:6px;
-      border:1px solid var(--border);
-    }
-    .contact-box p{ margin-bottom:12px; color:var(--text-main); }
+    .btn:hover { background-color: var(--button-hover); }
 
-    .two-col{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+    a {
+      color: var(--text-main);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .muted-note{
-      font-size:14px;
-      color:var(--text-muted);
-      margin-top:10px;
-      margin-bottom:0;
+    a:hover { color: var(--text-muted); }
+
+    .card {
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      background: var(--card);
     }
 
-    footer{
-      margin-top:76px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
-      color:var(--text-muted);
-      font-size:13px;
+    .contact-box {
+      background: var(--contact);
+      padding: 26px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 76px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
     }
   </style>
 </head>
@@ -167,21 +166,14 @@
         <img src="IMG_0180.jpeg" alt="Kledi Jenicerri" class="profile-pic" />
         <span class="eyebrow">QuickBooks Cleanup for Contractors</span>
 
-        <h1>Know your real numbers. Bank to books. No guesswork.</h1>
+        <h1>You’re here because you need your books fixed. Let’s fix them.</h1>
 
-        <p class="subhead">
-          If QuickBooks is behind, your P&L is a story, not a scorecard. I clean up the history, reconcile every account,
-          and get you to financials you can actually use to price jobs, control cash, and stop flying blind.
+        <p>
+          I do QuickBooks cleanup for contractors and service businesses.
+          If your file is behind or messy, I’ll get it caught up and reconciled so your reports make sense.
         </p>
 
-        <div class="pills" aria-label="What you get">
-          <span class="pill">Bank + cards reconciled</span>
-          <span class="pill">Accurate P&amp;L</span>
-          <span class="pill">Clean COA for your trade</span>
-          <span class="pill">Month-end close option</span>
-        </div>
-
-        <a href="#contact" class="btn">Request pricing</a>
+        <a href="#contact" class="btn">Request a diagnostic</a>
       </section>
     </header>
 
@@ -190,39 +182,38 @@
         <h2>The work</h2>
 
         <div class="card">
-          <h3>1) File review (paid diagnostic)</h3>
+          <h3>1) Paid diagnostic (required)</h3>
           <p>
-            Fast scan of your QuickBooks + statements to quantify what’s broken, what’s missing, and what “done” looks like.
-            You get a flat price for cleanup, not an open-ended hourly tab.
+            I look at your QuickBooks and statements to confirm scope, find what’s broken, and price the cleanup as a flat project.
           </p>
           <ul>
-            <li>Reconciliation status and gap check (bank/credit cards).</li>
-            <li>Identify duplicates, uncategorized spend, and broken opening balances.</li>
-            <li>Flat-rate quote + timeline for full cleanup.</li>
+            <li>Review your QuickBooks file and reconciliation status.</li>
+            <li>Identify missing months, duplicate activity, and uncategorized items.</li>
+            <li>Give you a flat cleanup price and a timeline.</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>2) Cleanup & catch-up</h3>
           <p>
-            I bring the books current and tie out the accounts to the penny so your reports match reality.
+            I bring your books current and tie out the accounts to the penny.
           </p>
           <ul>
-            <li>Reconcile all bank and credit card accounts (full history in scope).</li>
-            <li>Fix categorization and vendor/customer coding so job profitability makes sense.</li>
-            <li>Normalize your chart of accounts to fit how contractors actually operate.</li>
+            <li>Reconcile all bank and credit card accounts in scope.</li>
+            <li>Clean up categorization so your P&amp;L is usable.</li>
+            <li>Fix common messes (duplicates, opening balance issues, mis-postings).</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>3) Monthly close (optional)</h3>
           <p>
-            Once you’re clean, I can keep you clean with a simple monthly close so you’re not back in the same hole.
+            If you want to stay current after cleanup, I can handle a simple monthly close.
           </p>
           <ul>
-            <li>Monthly reconciliations and review.</li>
-            <li>Monthly P&amp;L + balance sheet delivered on a set date.</li>
-            <li>Short list of “watch items” that impact cash and margin.</li>
+            <li>Monthly reconciliations.</li>
+            <li>Monthly P&amp;L + balance sheet on a set date.</li>
+            <li>Short list of issues that need your attention.</li>
           </ul>
         </div>
       </section>
@@ -230,57 +221,41 @@
       <section id="process">
         <h2>How it works</h2>
         <ul>
-          <li><strong>1) Review:</strong> You send access + statements. I map scope and quote a flat price.</li>
-          <li><strong>2) Fix:</strong> I reconcile, correct history, and clean the structure.</li>
-          <li><strong>3) Deliver:</strong> You get accurate reports you can run the business on.</li>
+          <li><strong>1) Diagnostic:</strong> you share access + statements; I confirm scope and price it.</li>
+          <li><strong>2) Cleanup:</strong> I reconcile, clean up history, and fix the structure.</li>
+          <li><strong>3) Handover:</strong> you get clean reports and a clear next step.</li>
         </ul>
       </section>
 
       <section id="about">
         <h2>About</h2>
-
         <div class="card">
-          <h3>Who I am</h3>
           <p>
-            I’m Kledi Jenicerri. I work in financial analytics and reporting (insurance, consolidated financial statements),
-            and I do bookkeeping cleanup for contractors on the side. I’m not selling “books as a vibe.”
-            I’m selling clean numbers you can trust.
+            I’m Kledi Jenicerri, based in Southbury, CT. I work in financial analytics and reporting.
+            I’m detail-heavy and reconciliation-first: I’d rather be boring and correct than fast and wrong.
           </p>
-
-          <div class="two-col">
-            <div>
-              <h3>How I think</h3>
-              <ul>
-                <li>Cash first: reconcile everything, then talk performance.</li>
-                <li>Accuracy over aesthetics: tie-out beats pretty dashboards.</li>
-                <li>Plain English: what moved, why, and what to do next.</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="muted-note">
-            If you want tax filing, I’ll work with your CPA. My job is to get QuickBooks accurate and current.
+          <p class="note">
+            You work directly with me. No handoffs.
           </p>
         </div>
       </section>
 
       <section id="contact">
         <div class="contact-box">
-          <h2>Request pricing</h2>
-          <p>Send these 6 items and I’ll quote the diagnostic and next steps:</p>
+          <h2>Request a diagnostic</h2>
+          <p>Email me these details and I’ll respond with next steps:</p>
           <ul>
             <li>QuickBooks Online or Desktop?</li>
-            <li>How far behind (months)?</li>
-            <li># of bank accounts + credit cards to reconcile</li>
-            <li>Do you use payroll (yes/no, which provider)?</li>
-            <li>Approx annual revenue range</li>
-            <li>Any job costing / classes / locations currently used?</li>
+            <li>How many months are you behind?</li>
+            <li>How many bank and credit card accounts?</li>
+            <li>Do you run payroll (and through who)?</li>
+            <li>Rough annual revenue range</li>
           </ul>
 
-          <p style="margin-top:22px;"><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
-          <p style="margin-bottom:0;"><strong>Phone:</strong> <a href="tel:+12035609114">+1 (203) 560-9114</a></p>
+          <p style="margin-top: 22px;"><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
+          <p style="margin-bottom: 0;"><strong>Phone:</strong> <a href="tel:+12035609114">+1 (203) 560-9114</a></p>
 
-          <p class="muted-note">Based in Southbury, CT. Remote work nationwide.</p>
+          <p class="note">Based in Southbury, CT. Remote work nationwide.</p>
         </div>
       </section>
     </main>
