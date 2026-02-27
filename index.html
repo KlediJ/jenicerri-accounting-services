@@ -3,224 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kledi Jenicerri | Bookkeeping Cleanup</title>
-    <meta name="description" content="Bookkeeping cleanup for small service businesses and contractors.">
+    <title>Kledi Jenicerri | Bookkeeping for Contractors</title>
+    <meta name="description" content="Independent bookkeeping cleanup for contractors and service businesses.">
     
     <style>
         :root {
-            --bg: #fafafa;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --border: #e5e7eb;
-            --accent: #0f172a;
-            --accent-hover: #334155;
+            --bg: #ffffff;
+            --text-main: #000000;
+            --text-muted: #555555;
+            --border: #dddddd;
+            --button: #111111;
+            --button-hover: #333333;
         }
 
-        /* Reset & Base Styles */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
-            padding: 5vh 5vw;
+            padding: 40px 20px;
         }
 
-        /* Layout */
         .container {
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        section { margin-bottom: 4rem; }
+        section {
+            margin-bottom: 60px;
+        }
 
-        /* Typography */
         .eyebrow {
-            display: inline-block;
-            font-size: 0.875rem;
+            display: block;
+            font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 2.25rem;
-            line-height: 1.2;
+            font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--text-main);
         }
 
         h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         p {
-            font-size: 1.05rem;
+            font-size: 16px;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         ul {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 20px;
         }
 
         li {
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
+            padding-left: 20px;
+            margin-bottom: 10px;
             color: var(--text-muted);
+            font-size: 15px;
         }
 
         li::before {
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--text-muted);
+            color: var(--text-main);
+            font-weight: 700;
         }
 
-        /* Buttons & Links */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--accent);
+            display: inline-block;
+            background-color: var(--button);
             color: #ffffff;
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.875rem 1.5rem;
-            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 12px 20px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.2s ease;
+            margin-top: 10px;
         }
 
-        .btn:hover { background-color: var(--accent-hover); }
+        .btn:hover {
+            background-color: var(--button-hover);
+        }
 
-        a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
-        a:hover { color: var(--text-muted); }
+        a {
+            color: var(--text-main);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
-        /* Components */
-        .grid {
-            display: grid;
-            gap: 2rem;
-            margin-bottom: 2rem;
+        a:hover {
+            color: var(--text-muted);
         }
 
         .card {
-            background: #ffffff;
             border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 8px;
+            padding: 24px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background: #fafafa;
         }
-
-        .step { margin-bottom: 1.5rem; }
-        .step p { margin-bottom: 0; }
 
         .contact-box {
-            background: #ffffff;
+            background: #f4f4f5;
+            padding: 30px;
+            border-radius: 6px;
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 8px;
         }
 
-        /* Footer */
+        .contact-box p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
         footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
+            margin-top: 80px;
+            padding-top: 20px;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.875rem;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        
         <header>
             <section>
-                <span class="eyebrow">For service businesses & contractors</span>
-                <h1>I fix messy books so you know your actual cash position.</h1>
-                <p>If you are behind on reconciliations, mixing personal and business expenses, or have no reliable P&L, I can help. I am a solo operator. I untangle the mess.</p>
+                <span class="eyebrow">Bookkeeping for Contractors</span>
+                <h1>I get your bookkeeping caught up and accurate.</h1>
+                <p>If you are months or years behind on your QuickBooks, you can't see your actual profit. I am an independent bookkeeper. I reconcile your accounts, categorize your expenses, and give you a clean P&L. No judgment on how far behind you are. Let's just get it fixed.</p>
                 <a href="#contact" class="btn">Request a diagnostic</a>
             </section>
         </header>
 
         <main>
-            <section id="offer">
-                <h2>The Offer</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>1. Paid Diagnostic (Required)</h3>
-                        <p>I review your file to see exactly what is broken.</p>
-                        <ul>
-                            <li>Review of your QBO/QBD and bank statements.</li>
-                            <li>List of broken reconciliations and coding errors.</li>
-                            <li>A fixed-price quote to clean it all up.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>2. Cleanup + Monthly Close</h3>
-                        <p>I fix the historical data so your numbers are usable.</p>
-                        <ul>
-                            <li>Reconcile all accounts for the catch-up period.</li>
-                            <li>Correct the chart of accounts.</li>
-                            <li>Optional: Ongoing monthly close.</li>
-                        </ul>
-                    </div>
+            <section id="services">
+                <h2>The Work</h2>
+                
+                <div class="card">
+                    <h3>1. Paid Diagnostic (Required)</h3>
+                    <p>Before we guess at a price, I look at your file to see what needs fixing.</p>
+                    <ul>
+                        <li>Review your QuickBooks and bank statements.</li>
+                        <li>Find the broken reconciliations and missing data.</li>
+                        <li>Give you a flat-rate price to clean it all up.</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>2. Cleanup & Catch-up</h3>
+                    <p>I do the heavy lifting to get your history current.</p>
+                    <ul>
+                        <li>Reconcile all bank and credit card accounts.</li>
+                        <li>Correct your chart of accounts so it fits your trade.</li>
+                        <li>Option to have me close your books every month after.</li>
+                    </ul>
                 </div>
             </section>
 
             <section id="process">
-                <h2>The Process</h2>
-                <div class="step">
-                    <h3>Step 1: Diagnostic</h3>
-                    <p>I review your file and provide a findings memo with a flat-rate cleanup quote.</p>
-                </div>
-                <div class="step">
-                    <h3>Step 2: Cleanup</h3>
-                    <p>I reconcile accounts, fix the coding, and rebuild the basics.</p>
-                </div>
-                <div class="step">
-                    <h3>Step 3: Handover</h3>
-                    <p>You get a clean P&L. Manage it yourself, or hire me to close the books monthly.</p>
-                </div>
+                <h2>How it works</h2>
+                <ul>
+                    <li><strong>1. Diagnostic:</strong> I review your file and give you a flat-rate price.</li>
+                    <li><strong>2. Cleanup:</strong> I fix the history and tie out the accounts to the penny.</li>
+                    <li><strong>3. Handover:</strong> You get accurate financial reports.</li>
+                </ul>
             </section>
 
             <section id="contact">
                 <div class="contact-box">
                     <h2>Request a diagnostic</h2>
-                    <p>Send an email to get started. I need four details to price your diagnostic:</p>
+                    <p>Send an email to get started. I just need four details to price your diagnostic:</p>
                     <ul>
-                        <li>QBO or Desktop?</li>
-                        <li>How many months behind?</li>
-                        <li>Number of bank and credit card accounts?</li>
-                        <li>Rough annual revenue?</li>
+                        <li>Do you use QuickBooks Online or Desktop?</li>
+                        <li>How many months are you behind?</li>
+                        <li>How many bank and credit card accounts do you use?</li>
+                        <li>What is your rough annual revenue?</li>
                     </ul>
-                    <p style="margin-top: 2rem; margin-bottom: 0.5rem;"><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
-                    <p style="margin-bottom: 0;"><strong>Phone:</strong> +1 (203) 560-9114</p>
+                    <p style="margin-top: 25px;"><strong>Email:</strong> <a href="mailto:kledi.jenicerri@hotmail.com">kledi.jenicerri@hotmail.com</a></p>
+                    <p style="margin-bottom: 0;"><strong>Phone:</strong> <a href="tel:+12035609114">+1 (203) 560-9114</a></p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2026 Kledi Jenicerri. Based in CT.</p>
+            <p>&copy; 2026 Kledi Jenicerri. Based in Southbury, CT.</p>
         </footer>
+
     </div>
 
 </body>
