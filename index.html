@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Jenicerri Accounting Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fractional controllership, bookkeeping, and financial operations for owners who demand audit-ready data.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bookkeeping cleanup and reconciliations. Paid diagnostic first, then fixed-scope cleanup and optional monthly close." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #040b1f;
@@ -172,6 +172,7 @@
       color: #fff;
       text-decoration: none;
       box-shadow: 0 20px 50px rgba(39, 78, 248, 0.35);
+      display: inline-block;
     }
 
     .primary-cta:hover {
@@ -245,25 +246,7 @@
 
     .panel-text {
       font-size: 20px;
-      margin-bottom: 22px;
-    }
-
-    .panel-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .panel-metrics span.metric {
-      font-size: 32px;
-      font-weight: 700;
-      display: block;
-    }
-
-    .metric-label {
-      font-size: 13px;
-      opacity: 0.7;
+      margin-bottom: 18px;
     }
 
     .panel-highlight {
@@ -271,6 +254,7 @@
       border-radius: 16px;
       padding: 18px;
       border: 1px dashed rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .panel-highlight strong {
@@ -299,7 +283,7 @@
     }
 
     .section-heading {
-      max-width: 680px;
+      max-width: 760px;
       margin-bottom: 48px;
     }
 
@@ -308,37 +292,8 @@
       margin-bottom: 14px;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .stat-card {
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 26px;
-      background: rgba(6, 12, 32, 0.6);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .stat-label {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 12px;
-    }
-
-    .stat-value {
-      font-size: 36px;
-      font-weight: 700;
-    }
-
-    .stat-note {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 15px;
-      margin-top: 8px;
+    .section-heading p {
+      color: rgba(255, 255, 255, 0.75);
     }
 
     .services {
@@ -346,13 +301,9 @@
       color: #fff;
     }
 
-    .services .section-heading p {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 26px;
     }
 
@@ -423,29 +374,6 @@
       margin-bottom: 14px;
     }
 
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .testimonial {
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 24px;
-      padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 17px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .testimonial cite {
-      display: block;
-      margin-top: 16px;
-      font-style: normal;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 15px;
-    }
-
     .cta {
       background: linear-gradient(120deg, #09112c, #172a63);
       padding: clamp(70px, 10vw, 120px);
@@ -453,7 +381,7 @@
     }
 
     .cta-card {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.3);
       border-radius: 30px;
@@ -488,6 +416,12 @@
       margin-top: 6px;
       text-decoration: none;
       font-weight: 600;
+    }
+
+    .contact-grid p {
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
     }
 
     .cta-actions {
@@ -529,10 +463,6 @@
         top: 8px;
       }
 
-      .panel-metrics {
-        grid-template-columns: 1fr;
-      }
-
       .cta-group {
         flex-direction: column;
         align-items: stretch;
@@ -547,55 +477,43 @@
     <nav class="nav">
       <div class="logo">Jenicerri</div>
       <div class="nav-links">
-        <a href="#services" data-scroll>Capabilities</a>
-        <a href="#approach" data-scroll>Method</a>
+        <a href="#services" data-scroll>Offer</a>
+        <a href="#approach" data-scroll>Process</a>
         <a href="#contact" data-scroll>Contact</a>
-        <button class="nav-btn" data-scroll="#contact">Schedule a Call</button>
+        <button class="nav-btn" data-scroll="#contact">Request a diagnostic</button>
       </div>
     </nav>
 
     <div class="hero-grid">
       <div class="hero-copy reveal" data-reveal>
-        <p class="eyebrow">Fractional finance partner</p>
-        <h1>Clean data, proactive insight, confident growth.</h1>
-        <p class="lead">We deliver controller-level oversight, bulletproof bookkeeping, and systems that scale with every transaction.</p>
+        <p class="eyebrow">Bookkeeping cleanup</p>
+        <h1>Fix messy books and get a usable P&amp;L.</h1>
+        <p class="lead">Paid diagnostic first. Then a fixed-scope cleanup if it’s worth doing.</p>
         <div class="cta-group">
-          <a class="primary-cta" href="mailto:kledi.jenicerri@hotmail.com">Book a consultation</a>
-          <button class="ghost-cta" data-scroll="#services">Review capabilities</button>
+          <a
+            class="primary-cta"
+            href="mailto:kledi.jenicerri@hotmail.com?subject=Diagnostic%20request&body=Business%20type%3A%0AQBO%20or%20QBD%3A%0AMonths%20behind%3A%0A%23%20bank%20accounts%3A%0A%23%20credit%20cards%3A%0ARevenue%20range%3A%0ABiggest%20pain%3A"
+          >Request a diagnostic</a>
+          <button class="ghost-cta" data-scroll="#services">See the offer</button>
         </div>
         <ul class="hero-list">
-          <li>Full-stack bookkeeping, AP/AR, and payroll orchestration</li>
-          <li>Realtime dashboards and KPIs for decisive leadership</li>
-          <li>Catch-up and cleanup projects in record time</li>
-          <li>Systems expertise across QuickBooks, Excel, and cloud tools</li>
+          <li>Reconcile bank + credit accounts and stop the bleeding</li>
+          <li>Deliver a findings memo and fixed-scope cleanup quote</li>
+          <li>Optional monthly close once the books are stable</li>
         </ul>
       </div>
 
       <div class="hero-panel reveal" data-reveal>
         <div class="panel-card">
-          <p class="panel-title">Executive scorecard</p>
-          <p class="panel-text">Custom dashboards tuned to the KPIs owners watch before every decision.</p>
-          <div class="panel-metrics">
-            <div>
-              <span class="metric" data-count="24">0</span>
-              <span class="metric-label">Industries served</span>
-            </div>
-            <div>
-              <span class="metric" data-count="12">0</span>
-              <span class="metric-label">Years in operations</span>
-            </div>
-            <div>
-              <span class="metric" data-count="98">0</span>
-              <span class="metric-label">Client retention %</span>
-            </div>
-            <div>
-              <span class="metric" data-count="5">0</span>
-              <span class="metric-label">Days monthly close</span>
-            </div>
-          </div>
+          <p class="panel-title">Diagnostic package</p>
+          <p class="panel-text">Flat fee review of your current books. You get findings and a cleanup quote.</p>
           <div class="panel-highlight">
-            <strong>Focus</strong>
-            <div data-highlight>Audit-ready financials</div>
+            <strong>Deliverables</strong>
+            <div>
+              1) Reconciliation status + issue list<br />
+              2) Cleanup plan + fixed quote<br />
+              3) Timeline + client responsibilities
+            </div>
           </div>
         </div>
       </div>
@@ -603,68 +521,29 @@
   </header>
 
   <main>
-    <section id="metrics">
-      <div class="section-heading reveal" data-reveal>
-        <p class="eyebrow">Proof</p>
-        <h2>Quiet confidence backed by disciplined execution.</h2>
-        <p>Owners rely on us when cash clarity and lender-ready books are not optional.</p>
-      </div>
-      <div class="stats">
-        <article class="stat-card reveal" data-reveal>
-          <p class="stat-label">Average cleanup</p>
-          <div class="stat-value"><span data-count="30">0</span> days</div>
-          <p class="stat-note">From box of receipts to reconciled books, faster than internal teams.</p>
-        </article>
-        <article class="stat-card reveal" data-reveal>
-          <p class="stat-label">Workflow automation</p>
-          <div class="stat-value"><span data-count="120">0</span> hrs</div>
-          <p class="stat-note">Annual hours returned to founders via improved AP/AR cycles.</p>
-        </article>
-        <article class="stat-card reveal" data-reveal>
-          <p class="stat-label">Cash visibility</p>
-          <div class="stat-value"><span data-count="13">0</span> wks</div>
-          <p class="stat-note">Rolling cash forecast delivered with every monthly close.</p>
-        </article>
-        <article class="stat-card reveal" data-reveal>
-          <p class="stat-label">Audit preparation</p>
-          <div class="stat-value"><span data-count="100">0</span>%</div>
-          <p class="stat-note">All statements reconciled, documented, and audit-ready.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="services" id="services">
       <div class="section-heading reveal" data-reveal>
-        <p class="eyebrow">Capabilities</p>
-        <h2>Back-office architecture designed for confident scaling.</h2>
-        <p>Fractional controllership, bookkeeping, and operational process design layered into one accountable partner.</p>
+        <p class="eyebrow">Offer</p>
+        <h2>Two offers. One outcome: clean books you can trust.</h2>
+        <p>Start with the diagnostic. If it makes sense, we proceed to cleanup. Monthly close is optional.</p>
       </div>
+
       <div class="service-grid">
         <article class="service-card reveal" data-reveal>
-          <h3>Controller Services</h3>
+          <h3>1) Diagnostic (required)</h3>
           <ul>
-            <li>Monthly close within five business days</li>
-            <li>Budget vs. actual, KPI, and unit economics dashboards</li>
-            <li>Cash flow planning and scenario analysis</li>
-            <li>Board and banking package preparation</li>
+            <li>Review QuickBooks + bank/credit statements (sample period)</li>
+            <li>Identify breaks: reconciliations, categorization, sales tax, AP/AR</li>
+            <li>Findings memo + fixed-scope cleanup quote</li>
           </ul>
         </article>
+
         <article class="service-card reveal" data-reveal>
-          <h3>Bookkeeping & Compliance</h3>
+          <h3>2) Cleanup + Monthly Close (optional)</h3>
           <ul>
-            <li>Daily transaction coding and reconciliations</li>
-            <li>Payroll, 1099, and sales tax coordination</li>
-            <li>AP/AR monitoring with vendor and client portals</li>
-            <li>Cleanup and catch-up projects across years</li>
-          </ul>
-        </article>
-        <article class="service-card reveal" data-reveal>
-          <h3>Systems & Intelligence</h3>
-          <ul>
-            <li>QuickBooks Online, Desktop, Excel, and NetSuite expertise</li>
-            <li>Process automation and secure document workflows</li>
-            <li>Data room organization for transactions or audits</li>
-            <li>Integrations with POS, payroll, and CRM tools</li>
+            <li>Reconcile all accounts and correct coding</li>
+            <li>Clean chart of accounts so P&amp;L is usable</li>
+            <li>Ongoing monthly close if desired</li>
           </ul>
         </article>
       </div>
@@ -672,50 +551,28 @@
 
     <section class="approach" id="approach">
       <div class="section-heading reveal" data-reveal>
-        <p class="eyebrow">Method</p>
-        <h2>A disciplined, four-step engagement that keeps momentum.</h2>
+        <p class="eyebrow">Process</p>
+        <h2>Three steps. No theater.</h2>
+        <p>You always know what happens next and what you’re paying for.</p>
       </div>
+
       <div class="timeline">
         <article class="step reveal" data-reveal>
           <div class="step-number">01</div>
           <h3>Diagnostic</h3>
-          <p>Systems review, prior-year walkthrough, and KPI mapping to understand the state of your books and goals.</p>
+          <p>Review your current file and a sample period. You receive a findings memo and a fixed-scope cleanup quote.</p>
         </article>
+
         <article class="step reveal" data-reveal>
           <div class="step-number">02</div>
-          <h3>Stabilize</h3>
-          <p>Cleanup, reconciliations, and control rebuilds to deliver a clean month zero everyone can trust.</p>
+          <h3>Cleanup</h3>
+          <p>Reconcile accounts, correct coding, and rebuild the basics so the financials are usable and consistent.</p>
         </article>
+
         <article class="step reveal" data-reveal>
           <div class="step-number">03</div>
-          <h3>Operationalize</h3>
-          <p>Automated workflows, reporting cadence, and dashboards integrated with your leadership rhythm.</p>
-        </article>
-        <article class="step reveal" data-reveal>
-          <div class="step-number">04</div>
-          <h3>Advise</h3>
-          <p>Quarterly reviews and on-call insights that help owners make confident moves with live data.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <div class="section-heading reveal" data-reveal>
-        <p class="eyebrow">Testimonials</p>
-        <h2>Owners trust us when the numbers have to be right the first time.</h2>
-      </div>
-      <div class="testimonials-grid">
-        <article class="testimonial reveal" data-reveal>
-          "Jenicerri replaced a patchwork of freelancers with one accountable partner. Our lenders now comment on how buttoned-up our reporting is."
-          <cite>COO, Northeast construction firm</cite>
-        </article>
-        <article class="testimonial reveal" data-reveal>
-          "They cleaned 18 months of books in weeks, built a cash model, and now join our leadership meetings to guide decisions."
-          <cite>Founder, eCommerce brand</cite>
-        </article>
-        <article class="testimonial reveal" data-reveal>
-          "The team translated messy field data into dashboards that our board loves. We finally know our margins in real time."
-          <cite>President, multi-location services company</cite>
+          <h3>Monthly close (optional)</h3>
+          <p>If you want ongoing support, we set a cadence for reconciliations and a simple monthly package.</p>
         </article>
       </div>
     </section>
@@ -723,8 +580,9 @@
     <section class="cta" id="contact">
       <div class="cta-card reveal" data-reveal>
         <p class="eyebrow">Contact</p>
-        <h2>Let's build a finance engine that scales as fast as your business.</h2>
-        <p>Schedule a discovery call to review your current books, goals, and timeline.</p>
+        <h2>Request a diagnostic.</h2>
+        <p>Email what you use (QBO/QBD), how many accounts, and how many months are messy. I’ll reply with the diagnostic fee and next steps.</p>
+
         <div class="contact-grid">
           <div>
             <span>Email</span>
@@ -736,19 +594,23 @@
           </div>
           <div>
             <span>Location</span>
-            <p>Remote + on-site support in CT & tri-state</p>
+            <p>Remote + on-site support in CT &amp; tri-state</p>
           </div>
         </div>
+
         <div class="cta-actions">
-          <a class="primary-cta" href="mailto:kledi.jenicerri@hotmail.com">Book a consultation</a>
-          <a class="ghost-cta" href="tel:+12035609114">Call now</a>
+          <a
+            class="primary-cta"
+            href="mailto:kledi.jenicerri@hotmail.com?subject=Diagnostic%20request&body=Business%20type%3A%0AQBO%20or%20QBD%3A%0AMonths%20behind%3A%0A%23%20bank%20accounts%3A%0A%23%20credit%20cards%3A%0ARevenue%20range%3A%0ABiggest%20pain%3A"
+          >Request a diagnostic</a>
+          <a class="ghost-cta" href="tel:+12035609114">Call</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    &copy; <span data-year></span> Jenicerri Accounting Services. Clean books. Clear decisions.
+    &copy; <span data-year></span> Jenicerri Accounting Services.
   </footer>
 
   <script>
@@ -789,58 +651,9 @@
         revealObserver.observe(element);
       });
 
-      function animateCount(element) {
-        const target = Number(element.dataset.count) || 0;
-        const duration = 1600;
-        const startTime = performance.now();
-
-        function update(now) {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const value = Math.floor(progress * target);
-          element.textContent = value.toLocaleString();
-          if (progress < 1) {
-            requestAnimationFrame(update);
-          } else {
-            element.textContent = target.toLocaleString();
-          }
-        }
-        requestAnimationFrame(update);
-      }
-
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCount(entry.target);
-              counterObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      document.querySelectorAll("[data-count]").forEach((element) => {
-        counterObserver.observe(element);
-      });
-
       document.querySelectorAll("[data-year]").forEach((node) => {
         node.textContent = new Date().getFullYear();
       });
-
-      const highlights = [
-        "Audit-ready financials",
-        "Proactive cash insight",
-        "Workflow automation",
-        "Executive dashboarding"
-      ];
-      const highlightTarget = document.querySelector("[data-highlight]");
-      if (highlightTarget) {
-        let index = 0;
-        setInterval(() => {
-          index = (index + 1) % highlights.length;
-          highlightTarget.textContent = highlights[index];
-        }, 2600);
-      }
     })();
   </script>
 </body>
